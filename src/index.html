@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Vishwakarma | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <!-- Profile Image -->
+            <img src="profile.jpg" alt="Profile" class="profile-img">
+            <h3>Hello, It's Me</h3>
+            <h1>Sahil Vishwakarma</h1>
+            <h3>And I'm a <span class="typing">Web Designer</span></h3>
+            <p>
+                I'm a web designer with extensive experience for over 1 years.<br>
+                My expertise is in website creation, frontend design, and much more.
+            </p>
+            <div class="home-sci">
+                <a href="https://github.com/sahilvishwa07/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sahilvishwa07" target="_blank"><i class="fab fa-linkedin"></i></a>
+                
+            </div>
+            <a href="#about" class="btn-box">More about me</a>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="about-content card">
+            <h2>About Me</h2>
+            <p>
+                I am passionate about building excellent websites that improve the lives of those around me. 
+                I specialize in creating websites for clients ranging from individuals and small businesses all the way to large enterprise corporations.
+            </p>
+        </div>
+    </section>
+    <section class="skills" id="skills">
+        <div class="skills-content card">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>React, Bootstrap</li>
+                <li>UI/UX Design</li>
+                <li>Responsive Web Design</li>
+            </ul>
+        </div>
+    </section>
+    <section class="projects" id="projects">
+        <div class="projects-content card">
+            <h2>Projects</h2>
+            <ul>
+                <li>Portfolio Website</li>
+                <li>E-commerce Landing Page</li>
+                <li>Blog Platform</li>
+            </ul>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="contact-content card">
+            <h2>Contact</h2>
+            <p>Email: sahilvishwakarma711@gmail.com</p>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>© 2025 Sahil Vishwakarma. All rights reserved.</p>
+    </footer>
+    <button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    <button id="darkModeToggle" title="Toggle dark mode"><i class="fas fa-moon"></i></button>
+    <script src="../scripts/main.js"></script>
+    <script>
+    // Typing animation effect
+    const typing = document.querySelector('.typing');
+    const words = ['Web Designer', 'Frontend Developer', 'UI/UX Enthusiast'];
+    let wordIndex = 0, charIndex = 0, isDeleting = false;
+
+    function type() {
+        let current = words[wordIndex];
+        if (isDeleting) {
+            typing.textContent = current.substring(0, charIndex--);
+            if (charIndex < 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, 50);
+            }
+        } else {
+            typing.textContent = current.substring(0, charIndex++);
+            if (charIndex > current.length) {
+                isDeleting = true;
+                setTimeout(type, 1000);
+            } else {
+                setTimeout(type, 120);
+            }
+        }
+    }
+    type();
+
+    // Scroll-to-top button
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.onscroll = function() {
+        scrollBtn.style.display = (window.scrollY > 300) ? "block" : "none";
+    };
+    scrollBtn.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Dark mode toggle
+    const darkBtn = document.getElementById('darkModeToggle');
+    darkBtn.onclick = function() {
+        document.body.classList.toggle('light-mode');
+        darkBtn.querySelector('i').classList.toggle('fa-moon');
+        darkBtn.querySelector('i').classList.toggle('fa-sun');
+    };
+    </script>
+</body>
+</html>
