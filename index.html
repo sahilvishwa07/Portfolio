@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sahil Vishwakarma | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    
     <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -27,8 +28,8 @@
             <h1>Sahil Vishwakarma</h1>
             <h3>And I'm a <span class="typing">Web Designer</span></h3>
             <p>
-                I'm a web designer with extensive experience for over 1 years.<br>
-                My expertise is in website creation, frontend design, and much more.
+              I'm a fresher web designer eager to build amazing websites.<br>
+              My expertise is in frontend design, responsive layouts, and clean code.
             </p>
             <div class="home-sci">
                 <a href="https://github.com/sahilvishwa07/" target="_blank"><i class="fab fa-github"></i></a>
@@ -43,10 +44,9 @@
           <div class="card-inner">
             <div class="card-front">
               <h2>About Me</h2>
-              <p>
-                I am passionate about building excellent websites that improve the lives of those around me. 
-                I specialize in creating websites for clients ranging from individuals and small businesses all the way to large enterprise corporations.
-              </p>
+                  <p>
+                  As a fresher, I've gained practical experience by building real-world projects. Through hands-on development, I've strengthened my skills in web design, frontend development, and creating responsive user interfaces. Each project has enhanced my ability to write clean code and deliver user-focused solutions.
+                  </p>
             </div>
             <div class="card-back">
               <h2>More Info</h2>
@@ -75,7 +75,6 @@
               <ul>
                 <li>Git & GitHub</li>
                 <li>Flutter</li>
-                <li>SEO Basics</li>
                 <li>Team Collaboration</li>
               </ul>
             </div>
@@ -88,16 +87,16 @@
             <div class="card-front">
               <h2>Projects</h2>
               <ul>
-                <li>Portfolio Website</li>
-                <li>E-commerce Landing Page</li>
-                <li>Blog Platform</li>
+                <li>Credit Card Fraud Detection with Machine Learning</li>
+                <li>Created a Game With React</li>
+                <li>Other Stuff</li>
               </ul>
             </div>
             <div class="card-back">
               <h2>Project Links</h2>
               <ul>
-                <li><a href="https://github.com/sahilvishwa07/portfolio" target="_blank">Portfolio Website</a></li>
-                <li><a href="https://github.com/sahilvishwa07/ReverseTypingGame" target="_blank">Created a Game With React</a></li>
+                <li><a href="https://creditcardfraud0detection.streamlit.app/" target="_blank">Credit Card Fraud Detection with Machine Learning</a></li>
+                <li><a href="https://reverse-word-game-sigma.vercel.app/" target="_blank">Created a Game With React</a></li>
                 <li><a href="https://github.com/sahilvishwa07?tab=repositories" target="_blank">Other Stuff</a></li>
               </ul>
             </div>
@@ -109,6 +108,7 @@
           <div class="card-inner">
             <div class="card-front">
               <h2>Contact</h2>
+              <p>Name: Sahil Vishwakarma</p>
               <p>Email: sahilvishwakarma711@gmail.com</p>
             </div>
             <div class="card-back">
@@ -126,52 +126,6 @@
     </footer>
     <button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
     <button id="darkModeToggle" title="Toggle dark mode"><i class="fas fa-moon"></i></button>
-    <script src="../scripts/main.js"></script>
-    <script>
-    // Typing animation effect
-    const typing = document.querySelector('.typing');
-    const words = ['Web Designer', 'Frontend Developer', 'UI/UX Enthusiast'];
-    let wordIndex = 0, charIndex = 0, isDeleting = false;
-
-    function type() {
-        let current = words[wordIndex];
-        if (isDeleting) {
-            typing.textContent = current.substring(0, charIndex--);
-            if (charIndex < 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                setTimeout(type, 500);
-            } else {
-                setTimeout(type, 50);
-            }
-        } else {
-            typing.textContent = current.substring(0, charIndex++);
-            if (charIndex > current.length) {
-                isDeleting = true;
-                setTimeout(type, 1000);
-            } else {
-                setTimeout(type, 120);
-            }
-        }
-    }
-    type();
-
-    // Scroll-to-top button
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    window.onscroll = function() {
-        scrollBtn.style.display = (window.scrollY > 300) ? "block" : "none";
-    };
-    scrollBtn.onclick = function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
-    // Dark mode toggle
-    const darkBtn = document.getElementById('darkModeToggle');
-    darkBtn.onclick = function() {
-        document.body.classList.toggle('light-mode');
-        darkBtn.querySelector('i').classList.toggle('fa-moon');
-        darkBtn.querySelector('i').classList.toggle('fa-sun');
-    };
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
